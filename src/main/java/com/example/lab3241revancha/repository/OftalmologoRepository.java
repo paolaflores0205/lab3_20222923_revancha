@@ -13,4 +13,6 @@ public interface OftalmologoRepository extends JpaRepository<Oftalmologo, Intege
 
 
 
+
+
 }

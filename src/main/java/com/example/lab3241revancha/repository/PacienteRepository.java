@@ -18,4 +18,19 @@ public interface PacienteRepository extends JpaRepository<Paciente, Integer> {
             "ORDER BY p.fecha_cita ASC",
             nativeQuery = true)
     List<Paciente> findPxByProximasCitas (Integer oftId);
+
+    @Query(value = "update paciente p " +
+            "set p.numero_habitacion = ?1 " +
+            "where p.id = ?2",
+    nativeQuery = true)
+    void editarPx(Integer nroHabitacion, Integer pxId);
+
+
+    @Query(value = "update paciente p " +
+            "set p.oftalmologo_id = ?1 " +
+            "where p.id = ?2",
+            nativeQuery = true)
+    void derivarPx(Integer idOft, Integer pxId);
+
+
 }
